@@ -682,7 +682,7 @@ button {
   .menu-list { width: 100%; }
   h1 { font-size: 35px; }
   .inner-card-container { margin: 0 0 50px 0; padding: 0; }
-  button { width: 350px }
+  button { width: 350px; }
   .footer { padding-top: 100px; padding-bottom: 20px; height: auto; }
   .footer-icon-container { top: 40%; left: 50%; transform: translate(-50%, -50%); }
 }
