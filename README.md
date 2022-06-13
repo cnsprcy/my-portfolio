@@ -5,3 +5,5 @@ I will be updating my portfolio monthly with new or improved projects ranging fr
 
 - Handcoded with HTML, CSS, and JavaScript.
 - Designed with Figma.
+
+https://cnsprcy.github.io/my-portfolio/
