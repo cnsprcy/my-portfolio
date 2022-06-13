@@ -31,7 +31,7 @@ h2 {
 	letter-spacing: 0.25px;
 }
 
-h3, li {
+h3, li, button {
 	font-size: 18px;
 	font-weight: 700;
 	letter-spacing: 0.6px;
@@ -128,7 +128,7 @@ a {
 	height: auto;
 	top: 0;
 	right: 0;
-  z-index: 1000;
+        z-index: 1000;
 }
 
 #menu-active {
@@ -679,7 +679,7 @@ button {
 
 @media (max-width: 592px){
   #logo img { height: 13px; }
-  .menu-list { width: 100%; }
+  .menu-list { width: 350px; }
   h1 { font-size: 35px; }
   .inner-card-container { margin: 0 0 50px 0; padding: 0; }
   button { width: 350px; }
