@@ -585,9 +585,10 @@ a {
 
 .button-container {
 	display: flex;
+  flex-flow: row wrap;
 	justify-content: space-around;
 	align-content: center;
-	margin: 50px 300px;
+	margin: 0px 250px 50px 250px;
 }
 
 button {
@@ -658,9 +659,11 @@ button {
   .hero { background-color: #B4AFA7; width: 100%; }
   #hero-text { width: 100%; text-align: center; }
   #hero-img { width: 0; }
-  .description-container { width: 100%; margin: 0 0 100px 0; padding: 0 50px; }
+  .description-container { width: 100%; margin: -50px 0 100px 0; padding: 0 50px; }
   .hero-container { background-image: none; }
   .text-box { width: 100%; }
+  .button-container { flex-direction: column; margin: -50px 0 50px 0; }
+  button { margin-bottom: 25px; }
 }
 
 @media (max-width: 876px){
@@ -676,11 +679,12 @@ button {
 
 @media (max-width: 592px){
   #logo img { height: 13px; }
+  .menu-list { width: 100%; }
   h1 { font-size: 35px; }
-  .button-container { margin: 50px 0; }
   .inner-card-container { margin: 0 0 50px 0; padding: 0; }
+  button { width: 350px }
   .footer { padding-top: 100px; padding-bottom: 20px; height: auto; }
-  .footer-icon-container {top: 40%; left: 50%; transform: translate(-50%, -50%); }
+  .footer-icon-container { top: 40%; left: 50%; transform: translate(-50%, -50%); }
 }
 
 @media (max-width: 414px){
