@@ -1,0 +1,691 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Raleway&display=swap');
+
+* { 
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	cursor: default;
+	background-color: #E7E5DF;
+}
+
+h1, h2, h3, li {
+	font-family: 'Quicksand', sans-serif;
+	text-transform: uppercase;
+}
+
+h1 {
+	margin-bottom: 10px;
+	font-size: 55px;
+	font-weight: 700;
+	letter-spacing: 1.25px;
+}
+
+h2 {
+	margin-bottom: 25px;
+	font-size: 35px;
+	font-weight: 400;
+	letter-spacing: 0.25px;
+}
+
+h3, li {
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 0.6px;
+}
+
+p {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 25px;
+	letter-spacing: 0.6px;
+	opacity: 0.75;
+}
+
+a {
+	text-decoration: none;
+}
+
+.light-text, a {
+	color: #E7E5DF;
+}
+
+.dark-text {
+	color: #393E41;
+}
+
+.orange-text {
+	color: #A44200;
+}
+
+.hidden {
+  display: none;
+}
+
+.icon, button {
+	cursor: pointer;
+}
+
+.navigation {
+	background-color: #393E41;
+	display: flex;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	height: 70px;
+}
+
+#logo img {
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(109%) contrast(103%);
+	margin: 20px 100px;
+	width: auto;
+	height: 25px;
+}
+
+#menu {
+	position: relative;
+	right: 100px;
+}
+
+#alt-burger {
+	cursor: pointer;
+	display: flex;
+	flex-flow: column nowrap;
+	position: absolute;
+	top: 20px;
+	right: 100px;
+	z-index: 10000;
+}
+
+#alt-burger:hover {
+	opacity: 0.5;
+}
+
+.bar {
+	background-color: #E7E5DF;
+	border-radius: 25px;
+	width: 50px;
+	height: 5px;
+	z-index: 1001;
+}
+
+#bar-1 {
+	margin-bottom: 20px;
+}
+
+#menu-list {
+	background-color: #A44200;
+	border-radius: 0 0 0 25px;
+	color: #E7E5DF;
+	display: none;
+	position: absolute;
+	padding: 100px 0;
+	width: 500px;
+	height: auto;
+	top: 0;
+	right: 0;
+  z-index: 1000;
+}
+
+#menu-active {
+	color: #B07156;
+	letter-spacing: 3px;
+}
+
+#menu-list ul {
+	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+}
+
+#menu-list li {
+	cursor: pointer;
+	margin: 25px 0;
+	text-align: center;
+	transition: 0.3s;
+}
+
+#menu-list li:hover {
+	letter-spacing: 3px;
+	opacity: 0.5;
+}
+
+.hero-container {
+	background-image: url("assets/home/desktop/hero-desktop.jpg");
+  background-color: #B4AFA7;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.hero {
+	width: 50%;
+	height: auto;
+	overflow: hidden;
+}
+
+#hero-text {
+	display: block;
+	padding: 100px;
+}
+
+.inner-heading-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin: 50px 0;
+	z-index: 1;
+}
+
+.back-arrow img {
+	filter: invert(23%) sepia(3%) saturate(1348%) hue-rotate(159deg) brightness(96%) contrast(94%) !important;
+	position: absolute;
+	height: 50px;
+	width: auto;
+	top: 10px;
+	left: 100px;
+	transform: rotate(180deg);
+}
+
+.inner-heading-container h1 {
+	text-align: center;
+}
+
+.card-container {
+	display: flex;
+  flex-flow: row wrap;
+	justify-content: space-around;
+	padding: 100px 0;
+  margin-bottom: -50px;
+}
+
+.card {
+	cursor: pointer;
+	background-color: #A44200;
+	border-radius: 25px;
+	position: relative;
+  margin-bottom: 50px;
+	padding: 100px 30px;
+	width: 350px;
+	text-align: center;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+}
+
+.card h2 {
+	transition: 0.3s;
+}
+
+.card p {
+	transition: 0.5s;
+}
+
+.card-active {
+	background-color: #B07156;
+	border-radius: 25px;
+	display: flex;
+	justify-content: center;
+  align-items: center;
+	position: absolute;
+	margin: 0 -30px;
+	width: 100%;
+	height: 225px;
+	transition: 0.3s;
+	opacity: 0;
+}
+
+.card:hover > h2 {
+	transform: translateY(-50px);
+}
+
+.card:hover > p {
+	transform: translateY(100px);
+	opacity: 0;
+}
+
+.card:hover > .card-active {
+	transform: translateY(-125px);
+	opacity: 1;
+}
+
+.inner-card-container {
+	display: flex;
+	position: relative;
+	flex-flow: row wrap;
+	justify-content: space-around;
+  margin: 0 100px 50px 100px;
+	padding: 0 50px;
+	z-index: 2;
+}
+
+.inner-card {
+	cursor: pointer;
+	background-color: #A44200;
+	border-radius: 25px;
+	position: relative;
+  margin-bottom: 50px;
+	padding: 100px 30px;
+	width: 350px;
+	height: 350px;
+	text-align: center;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+}
+
+.inner-card-active {
+	opacity: 0;
+	background-color: #B07156;
+	border-radius: 25px;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	position: absolute;
+	margin: 0 -30px;
+	padding: 0 25px;
+	width: 100%;
+	height: 225px;
+	bottom: -125px;
+	transition: 0.3s;
+	z-index: 3;
+}
+
+.inner-card h3 {
+	margin-bottom: 25px;
+}
+
+.inner-card:hover > .inner-card-active {
+	transform: translateY(-125px);
+	opacity: 1;
+}
+
+#wd-card-1, #wd-card-2, #wd-card-3, #gd-card-1, #gd-card-2, #gd-card-3, #d-card-1, #d-card-2, #d-card-3 {
+	margin-bottom: 50px;
+}
+
+/* the intuitive rock */
+
+#gd-card-1 {
+	background: url("assets/portfolio projects/graphic design/the-intuitive-rock/the-intuitive-rock-preview.jpg");
+  background-size: contain;
+}
+
+#inner-gd-card-1 {
+	background: url("assets/portfolio projects/graphic design/the-intuitive-rock/the-intuitive-rock-preview.jpg");
+  background-size: contain;  
+}
+
+#inner-gd-card-2 {
+	background: url("assets/portfolio projects/graphic design/the-intuitive-rock/the-intuitive-rock-web.jpg");
+  background-size: contain;  
+}
+
+/* silverleaf stables */
+
+#gd-card-2 {
+	background: url("assets/portfolio projects/graphic design/silverleaf-stables/silverleaf-stables-preview.jpg");
+	background-size: contain;
+}
+
+#inner-gd-card-3 {
+	background: url("assets/portfolio projects/graphic design/silverleaf-stables/silverleaf-stables-preview.jpg");
+  background-size: contain;  
+}
+
+#inner-gd-card-4 {
+	background: url("");
+  background-size: contain;  
+}
+
+/* rock creek corns */
+
+#gd-card-3 {
+  background: url("assets/portfolio projects/graphic design/rock-creek-corns/rock-creek-corns-preview.jpg");
+	background-size: contain;
+}
+
+#inner-gd-card-5 {
+	background: url("assets/portfolio projects/graphic design/rock-creek-corns/rock-creek-corns-preview.jpg");
+  background-size: contain;  
+}
+
+#inner-gd-card-6 {
+	background: url("assets/portfolio projects/graphic design/rock-creek-corns/rock-creek-corns-white.jpg");
+  background-size: contain;  
+}
+
+/* rock wedding invitations */
+
+#gd-card-4 {
+  background: url("assets/portfolio projects/graphic design/rock-wedding/rock-wedding-preview.jpg");
+	background-size: contain;
+}
+
+#inner-gd-card-7 {
+	background: url("assets/portfolio projects/graphic design/rock-wedding/rock-wedding-preview.jpg");
+  background-size: contain;  
+}
+
+#inner-gd-card-8 {
+	background: url("assets/portfolio projects/graphic design/rock-wedding/rock-wedding-main.jpg");
+  background-size: contain;  
+}
+
+/* the death studio */
+
+#gd-card-5 {
+	background: url("assets/portfolio projects/graphic design/the-death-studio/the-death-studio-preview.jpg");
+	background-size: contain;
+}
+
+#inner-gd-card-9 {
+	background: url("assets/portfolio projects/graphic design/the-death-studio/the-death-studio-preview.jpg");
+  background-size: contain;  
+}
+
+#inner-gd-card-10 {
+	background: url("assets/portfolio projects/graphic design/the-death-studio/the-death-studio-toaster.jpg");
+  background-size: contain;  
+}
+
+/* riverstone reserve */
+
+#gd-card-6 {
+	background: url("assets/portfolio projects/graphic design/riverstone-reserve/riverstone-reserve-preview.jpg");
+	background-size: contain;
+}
+
+#inner-gd-card-11 {
+	background: url("assets/portfolio projects/graphic design/riverstone-reserve/riverstone-reserve-preview.jpg");
+  background-size: contain;  
+}
+
+#inner-gd-card-12 {
+	background: url("");
+  background-size: contain;  
+}
+
+/* rest in pieces */
+
+#wd-card-1 {
+	background: url("assets/portfolio projects/web design/rest-in-pieces/rest-in-pieces-preview.jpg");
+	background-size: contain;
+}
+
+#inner-wd-card-1 {
+	background: url("assets/portfolio projects/web design/rest-in-pieces/rest-in-pieces-inner-1.jpg");
+  background-size: contain;  
+}
+
+#inner-wd-card-2 {
+	background: url("assets/portfolio projects/web design/rest-in-pieces/rest-in-pieces-inner-2.jpg");
+  background-size: contain;  
+}
+
+/* the doughbie brothers*/
+
+#wd-card-2 {
+	background: url("assets/portfolio projects/web design/the-doughbie-brothers/the-doughbie-brothers-1.jpg");
+	background-size: contain;
+}
+
+#inner-wd-card-3 {
+	background: url("assets/portfolio projects/web design/the-doughbie-brothers/the-doughbie-brothers-1.jpg");
+  background-size: contain;  
+}
+
+#inner-wd-card-4 {
+	background: url("assets/portfolio projects/web design/the-doughbie-brothers/doughbie-brothers-2.jpg");
+  background-size: contain;  
+}
+
+/* bands in town */
+
+#wd-card-3 {
+	background: url("assets/portfolio projects/web design/bandsintown/bandsintown-preview.jpg");
+	background-size: contain;
+}
+
+#inner-wd-card-5 {
+	background: url("assets/portfolio projects/web design/bandsintown/bandsintown-inner-1.jpg");
+  background-size: contain;  
+}
+
+#inner-wd-card-6 {
+	background: url("assets/portfolio projects/web design/bandsintown/bandsintown-inner-2.jpg");
+  background-size: contain;  
+}
+
+/* on the rocks */
+
+#wd-card-4 {
+	background: url("assets/portfolio projects/web design/on-the-rocks/on-the-rock-2.jpg");
+	background-size: contain;  
+}
+
+#inner-wd-card-7 {
+	background: url("assets/portfolio projects/web design/on-the-rocks/on-the-rocks-1.png");
+  background-size: contain;  
+}
+
+#inner-wd-card-8 {
+	background: url("assets/portfolio projects/web design/on-the-rocks/on-the-rock-2.jpg");
+  background-size: contain;  
+}
+
+/* randomizr */
+
+#wd-card-5 {
+	background: url("assets/portfolio projects/web design/randomizr/randomizr-preview.jpg");
+	background-size: contain;  
+}
+
+#inner-wd-card-9 {
+	background: url("assets/portfolio projects/web design/randomizr/randomizr-preview.jpg");
+  background-size: contain;  
+}
+
+#inner-wd-card-10 {
+	background: url("assets/portfolio projects/web design/randomizr/randomizr-2.jpg");
+  background-size: contain;  
+}
+
+/* joshua weissman */
+
+#wd-card-6 {
+	background: url("assets/portfolio projects/web design/joshua-weissman/joshua-weissman-preview.jpg");
+	background-size: contain;
+}
+
+#inner-wd-card-11 {
+	background: url("assets/portfolio projects/web design/joshua-weissman/joshua-weissman-1.jpg");
+  background-size: contain;  
+}
+
+#inner-wd-card-12 {
+	background: url("assets/portfolio projects/web design/joshua-weissman/joshua-weissman-2.jpg");
+  background-size: contain;  
+}
+
+#d-card-1 {}
+
+#d-card-2 {}
+
+#d-card-3 {}
+
+#d-card-4 {}
+
+#d-card-5 {}
+
+#d-card-6 {}
+
+
+.skills {
+	background-color: #B4AFA7;
+	margin-bottom: 100px;
+	padding: 100px;
+	text-align: center;
+}
+
+.skills-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+
+}
+
+.skills-icon {
+	position: relative;
+}
+
+.skills-icon img {
+	filter: invert(23%) sepia(3%) saturate(1348%) hue-rotate(159deg) brightness(96%) contrast(94%) !important;
+	margin-top: 25px;
+	width: 120px;
+	transition: 0.3s;
+}
+
+.skills-text {
+	position: absolute;
+	width: 200%;
+	left: 50%;
+	top: 100%;
+	transform: translate(-50%, 50%);
+	transition: 0.3s;
+	opacity: 0;
+}
+
+.skills-icon:hover > img {
+	transform: translateY(-25px);
+}
+
+.skills-icon:hover > .skills-text {
+	opacity: 1;
+}
+
+.description-container {
+	margin: -50px 300px 50px 300px;
+}
+
+.description-container h2 {
+	text-align: center;
+}
+
+.button-container {
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	margin: 50px 300px;
+}
+
+button {
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	border-radius: 25px;
+	width: 225px;
+	height: 50px;
+	text-transform: uppercase;
+}
+
+.btn-1 {
+	border: 5px solid #A44200;
+	color: #A44200;
+}
+
+.btn-1:hover {
+	background-color: #A44200;
+	color: #fff;
+	opacity: 0.5;
+}
+
+.btn-2 {
+	background-color: #A44200;
+	color: #fff;
+}
+
+.btn-2:hover {
+	border: 5px solid #A44200;
+	background-color: transparent;
+	color: #A44200;	
+	opacity: 0.5;
+}
+
+
+.footer {
+	background-color: #393E41;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 75px;
+	
+}
+
+.footer-icon-container {
+	display: flex;
+	position: absolute;
+	left: 100px;
+}
+
+.footer-icon {
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(109%) contrast(103%);
+	width: 50px;
+}
+
+.footer-icon:hover {
+	opacity: 0.5;
+}
+
+#github {
+	margin-right: 25px;
+}
+
+@media (max-width: 1150px){
+  .hero { background-color: #B4AFA7; width: 100%; }
+  #hero-text { width: 100%; text-align: center; }
+  #hero-img { width: 0; }
+  .description-container { width: 100%; margin: 0 0 100px 0; padding: 0 50px; }
+  .hero-container { background-image: none; }
+  .text-box { width: 100%; }
+}
+
+@media (max-width: 876px){
+  #logo img { height: 20px; margin: 20px; }
+  #alt-burger { right: 50px; }
+  .back-arrow img { display: none; }
+  h1 { font-size: 50px; }
+  #hero-text { padding: 100px 50px 50px 50px; }
+  .skills-text { display: none; }
+  .inner-card-container { margin: 0 50px 50px 50px; }
+  .footer-icon-container { left: 20px; }
+}
+
+@media (max-width: 592px){
+  #logo img { height: 13px; }
+  h1 { font-size: 35px; }
+  .button-container { margin: 50px 0; }
+  .inner-card-container { margin: 0 0 50px 0; padding: 0; }
+  .footer { padding-top: 100px; padding-bottom: 20px; height: auto; }
+  .footer-icon-container {top: 40%; left: 50%; transform: translate(-50%, -50%); }
+}
+
+@media (max-width: 414px){
+  #logo img { height: 10px; }
+  #alt-burger { right: 20px; }
+  .main { width: 100%; margin-top: -50px; overflow: hidden; }
+  h1 { font-size: 30px; margin-top: 50px; }
+}
